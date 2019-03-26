@@ -1,0 +1,178 @@
+---
+title: "SRT411A0"
+author: "Markus Yuzon"
+date: "March 22, 2019"
+output:
+  word_document: default
+  pdf_document: default
+  html_document:
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction
+
+This is assignment0 for SRT411 that instructs us on how to use Rstudio in order to create outputs using basic commands.
+The goal of this Assignment is to write the codes for the "ToDos" of the document found in this link: https://cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf
+
+#1
+```{r}
+((2018-2014)/(2014-1997))*100
+```
+
+#2
+```{r}
+sy=2018
+gy=2014
+ by=1997
+ a = sy - gy
+ b = gy - by
+c = a/b
+ d = c * 100
+ d
+```
+#3
+```{r}
+e=c(4,5,8,11)
+sum(e)
+```
+#4
+```{r}
+x= rnorm(100)
+plot(x)
+```
+#5
+```{r}
+help(sqrt)
+```
+Miscellaneous Mathematical Functions
+
+Description
+
+abs(x) computes the absolute value of x, sqrt(x) computes the (principal) square root of x, √{x}.
+
+The naming follows the standard for computer languages such as C or Fortran.
+
+Usage
+
+abs(x)
+sqrt(x)
+Arguments
+
+x	
+a numeric or complex vector or array.
+Details
+
+These are internal generic primitive functions: methods can be defined for them individually or via the Math group generic. For complex arguments (and the default method), z, abs(z) == Mod(z) and sqrt(z) == z^0.5.
+
+abs(x) returns an integer vector when x is integer or logical.
+
+S4 methods
+
+Both are S4 generic and members of the Math group generic.
+
+References
+
+Becker, R. A., Chambers, J. M. and Wilks, A. R. (1988) The New S Language. Wadsworth & Brooks/Cole.
+
+See Also
+
+Arithmetic for simple, log for logarithmic, sin for trigonometric, and Special for special mathematical functions.
+
+‘plotmath’ for the use of sqrt in plot annotation.
+
+Examples
+
+require(stats) # for spline
+require(graphics)
+xx <- -9:9
+plot(xx, sqrt(abs(xx)),  col = "red")
+lines(spline(xx, sqrt(abs(xx)), n=101), col = "pink")
+
+#6
+```{r}
+source("firstscript.R")
+```
+#7
+```{r}
+P = seq(from=31, to=60, by=1)
+Q=matrix(data=(P),ncol = 5,nrow = 6)
+Q
+```
+#8
+```{r}
+source("dataframes.R")
+```
+
+#9
+```{r}
+source("df2.R")
+```
+rgb is for the color option for the plots. parameters will be set per color on the rgb function
+lwd can be a vector, its first element will apply to lines but the whole vector to symbols
+pch is plotting character either used as a single or integer code of a set of graphics symbols
+cex is the character/symbol expansion: numerical vector
+#10
+```{r}
+source("multi.R")
+r
+```
+#11
+```{r}
+ss = rnorm(100)
+sq = sqrt(ss)
+mean(sq)
+```
+Value cannot be produced.
+#12
+```{r}
+data1 = (strptime(c("20140322","20200202"),format = "%Y%m%d"))
+data2=c(13,17)
+plot(data1,data2, xlab = "Data",ylab = "Count", main = "Expected Presents")
+```
+#13
+```{r}
+vv = 1:100
+for (i in vv) {
+  if (vv[i] < 5 | vv[i] > 90)
+  {
+    vv[i]=vv[i] * 10
+  }
+  else
+  {
+    vv[i]=vv[i] * 0.1
+  }
+}
+vv
+```
+#14
+```{r}
+j=1:150
+ar = function(arg1)
+{
+     l = length(arg1)
+     for (i in 1:100) {
+         if (arg1[i] <5 | arg1[i] > 90)
+         {
+             arg1[i] = arg1[i] * 10
+         }else
+         {
+             arg1[i] = arg1[i] * 0.1
+         }
+     }
+     return(arg1)
+ }
+ar(arg1=j)
+```
+#15
+```{r}
+jj=j
+jk = (jj[jj<5] * 10)
+jk1 = jj[5:90] * 0.1
+jk3 = jj[jj > 90] * 10
+pf = c(jk,jk1,jk3)
+pf
+```
