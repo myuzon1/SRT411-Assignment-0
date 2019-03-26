@@ -9,4 +9,5 @@ and graphics supported. The file gives us 14 simple excercises that helps better
 of how to use R. From data compiling to complex logical programs this guide gives as a good place
 to begin learning a new language.
 
-File will be attached for the assignment.
+link for the Introduction to R
+https://cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf
